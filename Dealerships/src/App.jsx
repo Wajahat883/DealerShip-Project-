@@ -1,11 +1,24 @@
 import React from "react";
+import Nav from "./Navbar/Nav";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Welcome to the Dealerships App!
-      </h1>
-    </div>
+   <>
+   <BrowserRouter>
+    <Nav/>
+     <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+   </BrowserRouter>
+   
+    
+       </>
   );
 }
 export default App;
